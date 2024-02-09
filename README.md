@@ -1,0 +1,1 @@
+# systemd.mailpit.service
