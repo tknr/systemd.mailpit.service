@@ -1,0 +1,21 @@
+[Unit]
+Description=Email testing tool
+Documentation=https://github.com/axllent/mailpit
+After=network.target
+
+; Support auto restart, required version >= 230. Ref: https://bit.ly/2YJ36hQ
+;StartLimitIntervalSec=500
+;StartLimitBurst=5
+
+[Service]
+Type=simple
+; Files in /tmp/ will be auto deleted after 10 days. Ref: https://bit.ly/3q9bGpP
+;ExecStart=/usr/local/bin/mailpit --ui-auth-file /etc/mailpit/htpasswd --smtp-auth-file /etc/mailpit/htpasswd --smtp-auth-allow-insecure --db-file /tmp/mailpit.db
+ExecStart=/usr/local/bin/mailpit --db-file /tmp/mailpit.db
+
+; Support auto restart. Ref: https://bit.ly/2YJ36hQ
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
