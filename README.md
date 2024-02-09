@@ -17,6 +17,8 @@ systemctl start mailpit
 
 ## set mailsend to mailpit
 
+/etc/php.d/mail.ini
+
 ```
 [mail function]
 ;sendmail_path = "/usr/local/bin/mhsendmail --smtp-addr=localhost:1025"
