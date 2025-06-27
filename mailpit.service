@@ -11,7 +11,7 @@ After=network.target
 Type=simple
 ; Files in /tmp/ will be auto deleted after 10 days. Ref: https://bit.ly/3q9bGpP
 ;ExecStart=/usr/local/bin/mailpit --ui-auth-file /etc/mailpit/htpasswd --smtp-auth-file /etc/mailpit/htpasswd --smtp-auth-allow-insecure --db-file /tmp/mailpit.db
-ExecStart=/usr/local/bin/mailpit --webroot mailpit --db-file /tmp/mailpit.db --log-file /var/log/mailpit.log --max 0
+ExecStart=/usr/local/bin/mailpit --webroot mailpit --db-file /tmp/mailpit.db --log-file /var/log/mailpit.log --verbose --max 0
 
 ; Support auto restart. Ref: https://bit.ly/2YJ36hQ
 Restart=on-failure
